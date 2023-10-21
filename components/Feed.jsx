@@ -28,16 +28,16 @@ const Feed = () => {
 
   }
 
-  const fetchPosts = async () => {
-    const response = await fetch("/api/prompt");
-    const data = await response.json();
+    const fetchPosts = async () => {
+      const response = await fetch("/api/prompt");
+      const data = await response.json();
 
-    setAllPosts(data);
-  };
+      setAllPosts(data);
+    };
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
+    useEffect(() => {
+      fetchPosts();
+    }, []);
   
   return (
     <section className="feed">
