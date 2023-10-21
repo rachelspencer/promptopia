@@ -6,10 +6,25 @@ import { useRouter } from "next/navigation";
 
 import Profile from "@components/profile";
 
-const Profile = () => {
+const MyProfile = () => {
+
+    const handleEdit = () => {
+
+    };
+
+    const handleDelete = async () => {
+
+    };
+
   return (
-    <Profile/>
+    <Profile
+        name="My"
+        desc="Welcome to you personalized profile page"
+        data={[]}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
+    />
   );
 };
 
-export default Profile;
+export default MyProfile;
