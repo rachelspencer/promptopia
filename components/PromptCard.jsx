@@ -55,7 +55,7 @@ const handleCopy = () => {
       </div>
 
       <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt}</p>
-      <p className="font-inter text-sm blue_gradient cursor-pointer" onClick={() => handleTagClick && handleTagClick(post.tag)}>{post.tag}</p>
+      <p className="font-inter text-sm blue_gradient cursor-pointer" onClick={() => handleTagClick && handleTagClick(post.tag)}>#{post.tag}</p>
 
       {/*if the curently logged in user is the creator of that post and if they are on the profile page*/}
       
