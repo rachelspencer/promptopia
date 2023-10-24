@@ -1,7 +1,7 @@
-//GET (read)
 import { connectToDB } from '@utils/database';
 import Prompt from "@models/prompt";
 
+//GET (read)
 export const GET = async (request, { params }) => {
     try {
         await connectToDB();
@@ -16,5 +16,26 @@ export const GET = async (request, { params }) => {
 }
 
 // PATCH (update)
+export const PATCH = async (request, { params }) => {
+    try {
+
+        await connectToDB();
+
+        const existingPrompt = await Prompt.findById(params.id);
+        if (!existingPrompt) return new Response("Prompt not found", { status: 404})
+
+        //if there is a prompt/tag then update: the existing prompt is equal to the new prompt/tag passed through by params
+        existingPrompt.prompt = prompt;
+        existingPrompt.tag = tag;
+
+        await existingPrompt.save();
+
+        return new Response(JSON.stringify(existingPrompt), { status: 200 });
+
+    } catch (error) {
+        return new Response("Failed to update prompt", { status: 500 });
+    }
+}
+
 
 // DELETE (delete)
