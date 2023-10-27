@@ -32,7 +32,7 @@ const handleProfileClick = () => {
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5">
-        <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer"
+        <div className="flex-1 flex justify-start items-center gap-2 cursor-pointer"
           onClick={handleProfileClick}
         >
           <Image
@@ -40,7 +40,7 @@ const handleProfileClick = () => {
             alt="user_image"
             width={40}
             height={40}
-            className="rounded-full object contain"
+            className="rounded-full object-contain"
           />
 
           <div className="flex flex-col">
