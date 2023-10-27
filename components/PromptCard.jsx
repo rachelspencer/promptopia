@@ -18,11 +18,23 @@ const handleCopy = () => {
   navigator.clipboard.writeText(post.prompt);
   setTimeout(() => setCopied(""), 3000);
 }
+const handleProfileClick = () => {
+  //console.log to check handle click is working
+  console.log(post);
+  console.log(session);
+
+  // check to see if user is clicking their own post to take them to their own profile
+  if (post.creator._id === session?.user.id) return router.push("profile");
+  // if not their post, re-route the user to the posts users profile page
+  router.push(`profile/${post.creator._id}/?name=${post.creator.username}`)
+}
 
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5">
-        <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
+        <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer"
+          onClick={handleProfileClick}
+        >
           <Image
             src={post.creator.image}
             alt="user_image"
