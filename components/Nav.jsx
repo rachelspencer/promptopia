@@ -63,7 +63,7 @@ const Nav = () => {
               <button
               type="button"
               key={provider.name}
-              onClick={() => signIn(provider.id)}
+              onClick={() => signIn()}
               className="black_btn "
               >
                 Sign In
